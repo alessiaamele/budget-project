@@ -1,10 +1,8 @@
 package com.qa.budgetproject.service;
 
-import com.qa.budgetproject.domain.Days;
 import com.qa.budgetproject.domain.Foods;
 import com.qa.budgetproject.exceptions.DayNotFoundException;
 import com.qa.budgetproject.exceptions.FoodNotFoundException;
-import com.qa.budgetproject.repo.DaysRepository;
 import com.qa.budgetproject.repo.FoodsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

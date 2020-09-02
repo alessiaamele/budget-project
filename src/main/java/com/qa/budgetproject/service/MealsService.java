@@ -1,6 +1,5 @@
 package com.qa.budgetproject.service;
 
-import com.qa.budgetproject.domain.Days;
 import com.qa.budgetproject.domain.Meals;
 import com.qa.budgetproject.exceptions.DayNotFoundException;
 import com.qa.budgetproject.exceptions.MealNotFoundException;

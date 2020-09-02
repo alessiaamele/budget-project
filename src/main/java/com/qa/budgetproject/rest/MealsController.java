@@ -1,8 +1,6 @@
 package com.qa.budgetproject.rest;
 
-import com.qa.budgetproject.domain.Days;
 import com.qa.budgetproject.domain.Meals;
-import com.qa.budgetproject.service.DaysService;
 import com.qa.budgetproject.service.MealsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
