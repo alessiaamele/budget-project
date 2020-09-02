@@ -19,7 +19,7 @@ public class DaysService {
     }
 
     // View all the days created
-    public List<Days> viewAllDays(){
+    public List<Days> readAllDays(){
         return this.repo.findAll();
     }
 
@@ -34,7 +34,7 @@ public class DaysService {
     }
 
     // Update a day
-    public Days updateNote(Long id, Days day){
+    public Days updateDay(Long id, Days day){
         Days update = findDayById(id);
         update.setDay_of_week(day.getDay_of_week());
         update.setDay_of_week(day.getDay_of_week());
