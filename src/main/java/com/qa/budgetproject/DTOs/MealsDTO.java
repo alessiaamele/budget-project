@@ -1,34 +1,19 @@
-package com.qa.budgetproject.domain;
+package com.qa.budgetproject.DTOs;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "foods"})
-public class Meals {
-
-    @Id
-    @GeneratedValue
+public class MealsDTO {
     private Long id;
-
-    @Column
     private String name;
-
-    // check how to make it nullable
-    @Column
     private String description;
+    private List<FoodsDTO> foods = new ArrayList<>();
 
-    @OneToMany(mappedBy = "food", fetch = FetchType.EAGER)
-    private List<Foods> food = new ArrayList<>();
-
-    public Meals(){
-
+    public MealsDTO() {
     }
 
-    public Meals(String name, String description) {
+    public MealsDTO(String name, String description) {
+        super();
         this.name = name;
         this.description = description;
     }
@@ -57,12 +42,12 @@ public class Meals {
         this.description = description;
     }
 
-    public List<Foods> getFoods() {
-        return food;
+    public List<FoodsDTO> getFoods() {
+        return foods;
     }
 
-    public void setFoods(List<Foods> food) {
-        this.food = food;
+    public void setNotes(List<FoodsDTO> foods) {
+        this.foods = foods;
     }
 
 }

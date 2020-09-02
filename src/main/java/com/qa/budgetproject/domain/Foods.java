@@ -1,9 +1,6 @@
 package com.qa.budgetproject.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Foods {
@@ -17,6 +14,9 @@ public class Foods {
 
     @Column
     private Long cost;
+
+    @ManyToOne(targetEntity = Meals.class)
+    private Meals meal;
 
     public Foods(){
 
@@ -50,4 +50,13 @@ public class Foods {
     public void setCost(Long cost) {
         this.cost = cost;
     }
+
+    public Meals getMeal() {
+        return meal;
+    }
+
+    public void setMeal(Meals meal) {
+        this.meal = meal;
+    }
+
 }
