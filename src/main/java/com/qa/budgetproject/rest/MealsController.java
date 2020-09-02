@@ -20,7 +20,7 @@ public class MealsController {
         this.mealsService = mealsService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/getAllMeals")
     public List<Meals> getAllMeals(){
         return this.mealsService.readAllMeals();
     }

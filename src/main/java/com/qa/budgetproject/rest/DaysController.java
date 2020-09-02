@@ -19,7 +19,7 @@ public class DaysController {
         this.daysService = daysService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/getAllDays")
     public List<Days> getAllDays(){
        return this.daysService.readAllDays();
     }
@@ -29,7 +29,7 @@ public class DaysController {
         return this.daysService.createDay(day);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteDay/{id}")
     public Boolean deleteDay(@PathVariable Long id){
        return this.daysService.deleteDayById(id);
     }
