@@ -16,15 +16,15 @@ public class Foods {
     private String name;
 
     @Column
-    private Long price;
+    private Long cost;
 
     public Foods(){
 
     }
 
-    public Foods(String name, Long price) {
+    public Foods(String name, Long cost) {
         this.name = name;
-        this.price = price;
+        this.cost = cost;
     }
 
     public Long getId() {
@@ -43,11 +43,11 @@ public class Foods {
         this.name = name;
     }
 
-    public Long getPrice() {
-        return price;
+    public Long getCost() {
+        return cost;
     }
 
-    public void setPrice(Long price) {
-        this.price = price;
+    public void setCost(Long cost) {
+        this.cost = cost;
     }
 }
