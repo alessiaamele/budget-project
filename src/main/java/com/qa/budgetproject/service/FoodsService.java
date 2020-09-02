@@ -1,45 +1,57 @@
 package com.qa.budgetproject.service;
 
+import com.qa.budgetproject.DTOs.FoodsDTO;
 import com.qa.budgetproject.domain.Foods;
 import com.qa.budgetproject.exceptions.DayNotFoundException;
 import com.qa.budgetproject.exceptions.FoodNotFoundException;
 import com.qa.budgetproject.repo.FoodsRepository;
+import org.modelmapper.ModelMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class FoodsService {
     private final FoodsRepository repo;
 
+    private final ModelMapper mapper;
+
+
     @Autowired
-    public FoodsService(FoodsRepository repo){
+    public NoteService(FoodsRepository repo, ModelMapper mapper) {
         this.repo = repo;
+        this.mapper = mapper;
+
     }
 
-    // View all the Foods created
-    public List<Foods> readAllFoods(){
-        return this.repo.findAll();
-    }
+    private FoodsDTO mapToDTO(Foods food) {
+        return this.mapper.map(food, FoodsDTO.class);
 
-    // Create a new Food
-    public Foods createFood(Foods food){
-        return this.repo.save(food);
-    }
 
-    // Find Food By Id
-    public Foods findFoodById(Long id){
-        return this.repo.findById(id).orElseThrow(FoodNotFoundException::new);
-    }
+        // View all the Foods created
+    public List<FoodsDTO> readAllFoods(){return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());}
+
+        // Find Food By Id
+        public FoodsDTO findFoodById(Long id){
+            return this.mapToDTO(this.repo.findById(id).orElseThrow(FoodNotFoundException::new));    }
+
 
     // Update a food
-    public Foods updateFood(Long id, Foods food){
-        Foods update = findFoodById(id);
+        public FoodsDTO updateFood(Long id, Foods food){
+        Foods update = this.repo.findById(id).orElseThrow(FoodNotFoundException::new);
         update.setName(food.getName());
         update.setCost(food.getCost());
-        return this.repo.save(update);
+        return this.mapToDTO(this.repo.save(food));
     }
+
+        public FoodsDTO findFoodById(Long id){
+            return this.mapToDTO(this.repo.findById(id)
+                    .orElseThrow(FoodNotFoundException::new));    }
+
+
 
     // Delete a Food
     public Boolean deleteFoodById(Long id){
