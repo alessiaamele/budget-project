@@ -31,6 +31,7 @@ function displayFoods(){
                     })
                     //always do this otherwise it won't be added
                     document.body.appendChild(elem);
+
                 });
             } else {
                 console.log(
