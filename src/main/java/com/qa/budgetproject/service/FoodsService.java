@@ -1,11 +1,11 @@
 package com.qa.budgetproject.service;
 
+import org.modelmapper.ModelMapper;
 import com.qa.budgetproject.DTOs.FoodsDTO;
 import com.qa.budgetproject.domain.Foods;
 import com.qa.budgetproject.exceptions.DayNotFoundException;
 import com.qa.budgetproject.exceptions.FoodNotFoundException;
 import com.qa.budgetproject.repo.FoodsRepository;
-import org.modelmapper.ModelMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,20 +19,26 @@ public class FoodsService {
 
     private final ModelMapper mapper;
 
-
     @Autowired
-    public NoteService(FoodsRepository repo, ModelMapper mapper) {
+    public FoodsService(FoodsRepository repo, ModelMapper mapper) {
         this.repo = repo;
         this.mapper = mapper;
 
     }
 
-    private FoodsDTO mapToDTO(Foods food) {
-        return this.mapper.map(food, FoodsDTO.class);
+    public FoodsDTO mapToDTO(Foods food) {
+        return this.mapper.map(food, FoodsDTO.class);}
+
+        // Create new food
+    public FoodsDTO createFood(Foods food){
+        return this.mapToDTO(this.repo.save(food));
+    }
 
 
-        // View all the Foods created
-    public List<FoodsDTO> readAllFoods(){return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());}
+    // View all the Foods created
+    public List<FoodsDTO> readAllFoods(){
+        return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());       }
+
 
         // Find Food By Id
         public FoodsDTO findFoodById(Long id){
@@ -47,9 +53,6 @@ public class FoodsService {
         return this.mapToDTO(this.repo.save(food));
     }
 
-        public FoodsDTO findFoodById(Long id){
-            return this.mapToDTO(this.repo.findById(id)
-                    .orElseThrow(FoodNotFoundException::new));    }
 
 
 
