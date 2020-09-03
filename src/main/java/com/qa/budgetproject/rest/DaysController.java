@@ -1,8 +1,11 @@
 package com.qa.budgetproject.rest;
 
+import com.qa.budgetproject.DTOs.DaysDTO;
 import com.qa.budgetproject.domain.Days;
 import com.qa.budgetproject.service.DaysService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -20,32 +23,28 @@ public class DaysController {
     }
 
     @GetMapping("/getAllDays")
-    public List<Days> getAllDays(){
-       return this.daysService.readAllDays();
+    public ResponseEntity<List<DaysDTO>> getAllNoteBooks(){
+        return ResponseEntity.ok(this.daysService.readAllDays());
     }
 
     @PostMapping("/createDay")
-    public Days createDay(@RequestBody Days day){
-        return this.daysService.createDay(day);
+    public ResponseEntity<DaysDTO> createNoteBook(@RequestBody Days day){
+        return new ResponseEntity<>(this.daysService.createDay(day), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteDay/{id}")
     public Boolean deleteDay(@PathVariable Long id){
-       return this.daysService.deleteDayById(id);
+        return this.daysService.deleteDayById(id);
     }
 
     @GetMapping("/getDayById/{id}")
-    public Days getDayById(@PathVariable Long id){
-        return this.daysService.findDayById(id);
+    public ResponseEntity<DaysDTO> getDayById(@PathVariable Long id){
+        return ResponseEntity.ok(this.daysService.findDayById(id));
     }
 
     @PutMapping("/updateDay/{id}")
-    public Days updateDays(@PathVariable Long id, @RequestBody Days day){
-        return this.daysService.updateDay(id, day);
+    public ResponseEntity<DaysDTO> updateNoteBook(@PathVariable Long id, @RequestBody Days day){
+        return ResponseEntity.ok(this.daysService.updateDay(id, day));
     }
 
-    @PutMapping("/updateDay2")
-    public Days updateDayWithParam(@PathParam("id") Long id, @RequestBody Days day){
-        return this.daysService.updateDay(id, day);
-    }
 }
