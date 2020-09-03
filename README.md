@@ -1,5 +1,3 @@
-# budget-project
-
 # My Application 
 
 ### Resources
