@@ -12,16 +12,16 @@ In short, this is tool that helps the user to plan and budget his/her favourite 
 * a calculation of the approximate cost of all the ingredients required so that we can know the cost of each recipe
 
 More specifically, the application will have 3 databases:
-* a **dish database** for which the user will specify for each of his favourite and most used dishes the following:
+* a **meal table** for which the user will specify for each of his favourite and most used dishes the following:
    * name of the recipe/dish
    * list of ingredients (high importance/low importance/spices) and associated estimated prices
    * description on the recipe/ notes that the user can make
    * time to prepare
    * other tags such as health rating or protein
-* a **calendar database**, in which we can plan which meal we are going to have and when
+* a **ingredient table**, in which we can plan which meal we are going to have and when
   * a seven-day calendar in which to insert up to 5 meals/dishes a day
   * possibility of saving data on previous weeks
-* a **budget database**, in which we will be able to track how much the meal will cost
+* possibly a **budget table**, in which we will be able to track how much the meal will cost
   * a seven-day calendar in which we get a list of ingredients & cost used each day,
   * a calculation of the approximate cost of a meal, of a day and of a week of groceries
   * possibility of saving data on previous weeks
