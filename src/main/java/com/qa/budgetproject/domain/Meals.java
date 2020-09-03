@@ -21,7 +21,7 @@ public class Meals {
     @Column
     private String description;
 
-    @OneToMany(mappedBy = "food", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "meal", fetch = FetchType.EAGER)
     private List<Foods> food = new ArrayList<>();
 
     public Meals(){
