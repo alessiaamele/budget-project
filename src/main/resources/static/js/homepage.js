@@ -22,11 +22,11 @@ function displayFoods(){
                     elem.appendChild(header);
                     el.foods.forEach(food => {
                         console.log(food) // print all notes for each notebook
-                        let title = document.createElement('p');
+                        let name = document.createElement('p');
                         let cost = document.createElement('p');
-                        title.textContent = "Ingredient: " + food.title;
-                        cost.textContent = "Cost: " + food.cost;
-                        elem.appendChild(title);
+                        name.textContent = "Ingredient: " + food.name;
+                        cost.textContent = "Cost (£): " + food.cost;
+                        elem.appendChild(name);
                         elem.appendChild(cost);
                     })
                     //always do this otherwise it won't be added
