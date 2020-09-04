@@ -10,7 +10,7 @@ jobs:
       enabled: true
     steps: 
       - run:
-          name: Install maven & jdk 
+          name: Install mvn & jdk 
           command: ssh $SSH_USER@$SSH_HOST "sudo apt-get update && sudo apt install maven -y && sudo apt install default-jdk
           name: Clone Repo & Install Application Dependencies
           command: ssh $SSH_USER@$SSH_HOST "git clone https://github.com/alessiaamele/budget-project && cd ~/budget-project && mvn install"
