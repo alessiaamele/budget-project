@@ -13,24 +13,10 @@ jobs:
     steps:
       - run:
           name: Job Two
-          command: echo 'This is the second job!
-          
-  workflows:
+          command: echo 'This is the second job!'
+workflows:
   version: 2.1
-  build-test-deploy:
+  one_and_two:
     jobs:
-      - build
-      - test1:
-          requires:
-            - build
-      - test2:
-          requires:
-            - build
-      - test3:
-          requires:
-            - build
-      - deploy:
-          requires:
-            - test1
-            - test2
-            - test3
+      - one
+      - two
