@@ -1,22 +1,19 @@
-version: 2.1
-jobs:
-  one:
-    docker:
-      - image: alpine:3.7
-    steps:
-      - run:
-          name: Job One
-          command: echo 'This is the first job!'
-  two:
-    docker:
-      - image: alpine:3.7
-    steps:
-      - run:
-          name: Job Two
-          command: echo 'This is the second job!'
 workflows:
   version: 2.1
-  one_and_two:
+  build-test-deploy:
     jobs:
-      - one
-      - two
+      - build
+      - test1:
+          requires:
+            - build
+      - test2:
+          requires:
+            - build
+      - test3:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test1
+            - test2
+            - test3
