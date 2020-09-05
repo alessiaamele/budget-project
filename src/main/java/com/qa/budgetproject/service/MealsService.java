@@ -49,6 +49,7 @@ public class MealsService {
     public MealsDTO updateMeal(Long id, Meals meal){
         Meals update = this.repo.findById(id).orElseThrow(MealNotFoundException::new);
         update.setName(meal.getName());
+        update.setDescription(meal.getDescription());
         return this.mapToDTO(this.repo.save(update));
     }
 

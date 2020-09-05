@@ -31,7 +31,7 @@ public class FoodsController {
 
 //
     @PostMapping("/createFood")
-    public ResponseEntity<FoodsDTO> createNote(@RequestBody Foods food){
+    public ResponseEntity<FoodsDTO> createFood(@RequestBody Foods food){
         return new ResponseEntity<>(this.foodsService.createFood(food), HttpStatus.CREATED);
     }
 

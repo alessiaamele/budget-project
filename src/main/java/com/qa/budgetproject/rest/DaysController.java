@@ -28,7 +28,7 @@ public class DaysController {
     }
 
     @PostMapping("/createDay")
-    public ResponseEntity<DaysDTO> createNoteBook(@RequestBody Days day){
+    public ResponseEntity<DaysDTO> createDay(@RequestBody Days day){
         return new ResponseEntity<>(this.daysService.createDay(day), HttpStatus.CREATED);
     }
 
@@ -43,7 +43,7 @@ public class DaysController {
     }
 
     @PutMapping("/updateDay/{id}")
-    public ResponseEntity<DaysDTO> updateNoteBook(@PathVariable Long id, @RequestBody Days day){
+    public ResponseEntity<DaysDTO> updateDay(@PathVariable Long id, @RequestBody Days day){
         return ResponseEntity.ok(this.daysService.updateDay(id, day));
     }
 
