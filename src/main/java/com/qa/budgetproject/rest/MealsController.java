@@ -42,7 +42,7 @@ public class MealsController {
     }
 
     @PutMapping("/updateMeal/{id}")
-    public ResponseEntity<MealsDTO> updateNoteBook(@PathVariable Long id, @RequestBody Meals meal){
+    public ResponseEntity<MealsDTO> updateMeal(@PathVariable Long id, @RequestBody Meals meal){
         return ResponseEntity.ok(this.mealsService.updateMeal(id, meal));
     }
 
