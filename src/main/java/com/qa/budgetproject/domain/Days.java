@@ -1,10 +1,14 @@
 package com.qa.budgetproject.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "meals"})
+
 public class Days {
 
     @Id
@@ -14,7 +18,7 @@ public class Days {
     @Column
     private String day_of_week;
 
-    @OneToMany(mappedBy = "day", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "day", fetch = FetchType.EAGER)
     private List<Meals> meal = new ArrayList<>();
 
 
