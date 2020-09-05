@@ -6,9 +6,9 @@ function displayFoods(){
             if (req.getResponseHeader("Content-Type") === "application/json") {
                 console.log("oh look its some JSON: " + req.responseText);
                 //adding an element to the body example
-                let elem = document.createElement('div');
-                elem.textContent = "hello world";
-                document.body.appendChild(elem);
+                //let elem = document.createElement('div');
+                //elem.textContent = "hello world";
+                //document.body.appendChild(elem);
 
                 let stuff = JSON.parse(req.response);
                 stuff.forEach(el => {
