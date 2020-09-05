@@ -39,6 +39,7 @@ public class Meals {
     public void setDay(Days day) {
         this.day = day;
     }
+
     public Meals(String name, String description) {
         this.name = name;
         this.description = description;
