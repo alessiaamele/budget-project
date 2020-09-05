@@ -1,9 +1,8 @@
 package com.qa.budgetproject.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Days {
@@ -14,6 +13,10 @@ public class Days {
 
     @Column
     private String day_of_week;
+
+    @OneToMany(mappedBy = "day", fetch = FetchType.LAZY)
+    private List<Meals> meal = new ArrayList<>();
+
 
     public Days(){
 
@@ -38,4 +41,14 @@ public class Days {
     public void setDay_of_week(String day_of_week) {
         this.day_of_week = day_of_week;
     }
+
+    public List<Meals> getMeal() {
+        return meal;
+    }
+
+    public void setMeal(List<Meals> meal) {
+        this.meal = meal;
+    }
+
 }
+
