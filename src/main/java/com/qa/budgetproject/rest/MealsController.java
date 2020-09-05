@@ -32,14 +32,17 @@ public class MealsController {
     }
 
     @DeleteMapping("/deleteMeal/{id}")
-    public Boolean deleteMeal(@PathVariable Long id){
-        return this.mealsService.deleteMealById(id);
+    public ResponseEntity<?> deleteMeal(@PathVariable Long id) {
+        return this.mealsService.deleteMealById(id)
+                ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
+                : ResponseEntity.noContent().build();
     }
 
     @GetMapping("/getMealById/{id}")
     public ResponseEntity<MealsDTO> getMealById(@PathVariable Long id){
         return ResponseEntity.ok(this.mealsService.findMealById(id));
     }
+
 
     @PutMapping("/updateMeal/{id}")
     public ResponseEntity<MealsDTO> updateMeal(@PathVariable Long id, @RequestBody Meals meal){
