@@ -10,17 +10,14 @@ jobs:
       enabled: true
     steps: 
       - run:
-          name: Install jdk & maven
-          command: ssh $SSH_USER@$SSH_HOST "sudo apt-get update && sudo apt-get install -y git && sudo apt-get install -y openjdk-8-jdk && sudo apt-get install -y maven"
-      - run:
           name: Delete previous repo
           command: ssh $SSH_USER@$SSH_HOST "rm -r budget-project"
       - run:
-          name: Clone Repo
-          command: ssh $SSH_USER@$SSH_HOST "git clone https://github.com/alessiaamele/budget-project && cd ~/budget-project"
+          name: Install jdk & maven
+          command: ssh $SSH_USER@$SSH_HOST "sudo apt-get update && sudo apt-get install -y git && sudo apt-get install -y openjdk-8-jdk && sudo apt-get install -y maven"
       - run:
-          name: Install Application Dependencies
-          command: "mvn install"
+          name: Clone Repo
+          command: ssh $SSH_USER@$SSH_HOST "git clone https://github.com/alessiaamele/budget-project && cd ~/budget-project && mvn install"
       - run:
           name: Deploy Application
           command: ssh $SSH_USER@$SSH_HOST "cd ~/budget-project && mvn clean install && mvn spring-boot:run "
