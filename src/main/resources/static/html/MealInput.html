@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Meal</title>
+    <script src="../js/homepage.js"></script>
+
+</head>
+<body>
+<a href="Calendar.html">Go to Calendar</a><br><br>
+<a href="MealsMenu.html">Go to Meals Menu</a><br><br>
+<a href="DayInput.html">Add a day</a><br><br>
+<a href="MealInput.html">Add a meal to a day</a><br><br>
+<a href="IngredientInput.html">Add an ingredient to a meal</a><br><br>
+
+
+<h1> Your Meal: </h1>
+
+<form id="ingredientForm">
+
+    <label for="name">Name of meal:</label><br>
+    <input type="text" id="name" name="name"><br><br><br>
+
+    <label for="description">description:</label><br>
+    <input type="text" id="description" name="description"><br><br><br>
+
+    <label for="dayId">Id of day the meal belongs to:</label><br>
+    <input type="text" id="dayId" name="dayId"><br><br><br>
+
+    <input type="submit" onclick="submitFood()" value="Submit">
+
+</form>
+</body>
+</html>

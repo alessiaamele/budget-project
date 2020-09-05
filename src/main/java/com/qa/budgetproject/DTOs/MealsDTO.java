@@ -46,7 +46,7 @@ public class MealsDTO {
         return foods;
     }
 
-    public void setNotes(List<FoodsDTO> foods) {
+    public void setFoods(List<FoodsDTO> foods) {
         this.foods = foods;
     }
 
