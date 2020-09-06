@@ -42,7 +42,7 @@ function displayMeals(){
             console.log("Oh no... handle error");
         }
     };
-    req.open("GET", "http://localhost:8080/getAllMeals");
+    req.open("GET", "http://35.246.52.182:8080/getAllMeals");
     req.send();
 }
 
@@ -56,9 +56,9 @@ function submitFood(){
     }
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createFood");
+    req.open("POST", "http://35.246.52.182:8080/createFood");
     req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
+        if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
         } else {
             console.log("Oops...");
@@ -83,9 +83,9 @@ function createMeal(){
     }
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createMeal");
+    req.open("POST", "http://35.246.52.182:8080/createMeal");
     req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
+        if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
         } else {
             console.log("Oops...");
@@ -106,11 +106,11 @@ function updateMeal(){
         let item = elements.item(i);
         obj[item.name] = item.value;
     }
-    const URL = "http://localhost:8080/updateMeal/"+obj.mealId
+    const URL = "http://35.246.52.182:8080/updateMeal/"+obj.mealId
     const req = new XMLHttpRequest();
     req.open("PUT", URL);
     req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
+        if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
         } else {
             console.log("Oops...");
@@ -132,7 +132,7 @@ function updateFood(){
         let item = elements.item(i);
         obj[item.name] = item.value;
     }
-    const URL = "http://localhost:8080/updateFood/"+obj.foodId
+    const URL = "http://35.246.52.182:8080/updateFood/"+obj.foodId
     const req = new XMLHttpRequest();
     req.open("PUT", URL);
     req.onload = () => {
