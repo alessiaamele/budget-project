@@ -47,11 +47,11 @@ For time management purposes, I created a new "Sprint" every one-two days, in wh
 
 #### Entity Relationship Diagram
 
-The database for this application was designed using an entity relationship diagram, shown below. 
+The database for this application was designed using Entity Relationship Diagrams. As is shown in the diagrams, my original plan was to create three entities: Days, Meals and Foods. There would have been a Many To Many relationship between Days and Meals, as well as between Meals and Foods. Unfortunately, the development of this idea would have required more time and expertise. This is why, at this stage, I decided to keep only two entities, Meals and Foods, having a One to Many relationship. 
+
 
 ![ERDs](https://user-images.githubusercontent.com/52075688/92330675-92e57e00-f068-11ea-9128-597a5071fd18.png)
 
-As is shown in the diagrams, my original plan was to create three entities Days, Meals and Foods, where Days and Meals would have a Many to Many relationship and Meals and Foods would also have a Many to Many relationship. Unfortunately, the development of this idea would've required more time and expertise which is why I decided at this stage to keep only two entities, Meals and Foods, having a One to Many relationship. 
 
 ### Creation
 
