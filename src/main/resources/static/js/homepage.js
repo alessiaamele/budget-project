@@ -166,7 +166,7 @@ function deleteMeal(){
     }
 
     const req = new XMLHttpRequest();
-    const URL = "http://localhost:8080/deleteFood/"+obj.Number(mealId)
+    const URL = "http://localhost:8080/deleteMeal/"+obj.mealId
 
     req.open("DELETE", URL);
     req.onload = () => {
@@ -176,4 +176,5 @@ function deleteMeal(){
             console.log("Oops...");
         }
     };
+    req.send();
 }
