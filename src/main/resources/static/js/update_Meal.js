@@ -6,7 +6,7 @@ function updateMeal(){
         let item = elements.item(i);
         obj[item.name] = item.value;
     }
-    const URL = "http://34.89.87.120:9000/updateMeal/"+obj.mealId
+    const URL = "http://34.89.87.120:8080/updateMeal/"+obj.mealId
     const req = new XMLHttpRequest();
     req.open("PUT", URL);
     req.onload = () => {
