@@ -65,6 +65,15 @@ one to many with 2 entities
 ## Project Tracking
 
 ### Risk Assessement
+
+### Future improvements
 Google docs file linked to this with different potential risks, impacts and predicted level of occurrence
 
-### Testing
+I would like to further develop the budgetting aspect of this app.
+
+Implement a feature in which we can for 1 person how much of the unit of the ingredient is being used (eg: for a homemade soup, half a pack of frozen spinach is going to be used)
+Implement a feature in which we can specify how many people are eating a meal, so we can specify how many portions of food to have (for the cost of ingredients) (eg: 1 person/ 2 people/ a household)
+Implement an API that will essemtially get the price of ingredients automatically on a website (eg: on Sainsbury's website)
+I would also like to change the way the Calendar page to a seven day calendar with the appropriate dates, be able to save previous weeks.
+
+Finally, I would like to change the @OneToMany relationships between Days and Meals and Meals and Foods to @ManyToMany relationships, so that we could easily assign ingredients that have been placed into one meal more easily (and similarly with meals in days).
