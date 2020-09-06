@@ -42,7 +42,7 @@ function displayMeals(){
             console.log("Oh no... handle error");
         }
     };
-    req.open("GET", "http://localhost:8080/getAllMeals");
+    req.open("GET", "http://35.246.52.182:8080/getAllMeals");
     req.send();
 }
 
@@ -56,9 +56,9 @@ function submitFood(){
     }
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createFood");
+    req.open("POST", "http://35.246.52.182:8080/createFood");
     req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
+        if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
         } else {
             console.log("Oops...");
@@ -83,9 +83,9 @@ function createMeal(){
     }
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createMeal");
+    req.open("POST", "http://35.246.52.182:8080/createMeal");
     req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
+        if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
         } else {
             console.log("Oops...");
@@ -98,11 +98,6 @@ function createMeal(){
     ));
 }
 
-
-
-
-
-
 function updateMeal(){
     let elements = document.getElementById("updateMealForm").elements;
     // create a collection in json format and iterate over it to populate it
@@ -111,11 +106,11 @@ function updateMeal(){
         let item = elements.item(i);
         obj[item.name] = item.value;
     }
-    const URL = "http://localhost:8080/updateMeal/"+obj.mealId
+    const URL = "http://35.246.52.182:8080/updateMeal/"+obj.mealId
     const req = new XMLHttpRequest();
     req.open("PUT", URL);
     req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
+        if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
         } else {
             console.log("Oops...");
@@ -137,11 +132,11 @@ function updateFood(){
         let item = elements.item(i);
         obj[item.name] = item.value;
     }
-    const URL = "http://localhost:8080/updateFood/"+obj.foodId
+    const URL = "http://35.246.52.182:8080/updateFood/"+obj.foodId
     const req = new XMLHttpRequest();
     req.open("PUT", URL);
     req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
+        if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
         } else {
             console.log("Oops...");
@@ -153,30 +148,4 @@ function updateFood(){
         cost: Number(obj.cost)
         }
     ));
-}
-
-
-function deleteMeal(){
-    let elements = document.getElementById("deleteMealForm").elements;
-    // create a collection in json format and iterate over it to populate it
-    let obj ={};
-    for(let i = 0 ; i < elements.length - 1 ; i++){
-        let item = elements.item(i);
-        obj[item.name] = item.value;
-    }
-
-    const URL = "http://localhost:8080/deleteMeal/"+Number(obj.mealId);
-    const req = new XMLHttpRequest();
-
-
-    req.open("DELETE", URL);
-    req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
-            console.log("Server Responded with: " + req.responseText);
-        } else {
-            console.log("Oops...");
-        }
-    };
-    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send();
 }

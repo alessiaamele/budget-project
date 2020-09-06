@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete Meal:</title>
+    <script src="../js/delete_Meal.js"></script>
+
 </head>
 <body>
 <a href="MealsMenu.html">Go to Meals Menu</a><br><br>
 
-<h1> Your ingredient: </h1>
+<h1> Delete Meal: </h1>
 
 <form id="deleteMealForm">
 
-    <label for="mealId">Id of Meal:</label><br>
-    <input type="text" id="mealId" name="mealId"><br><br><br>
-
-
-    <input type="submit" onclick="deleteMeal()" value="Submit">
+    <label for="id">Id</label><br>
+    <input type="text" id="id" name="id"><br><br><br>
+    <input type="submit" onclick="delete_Meal()" value="Submit">
 
 </form>
 </body>
