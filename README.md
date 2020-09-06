@@ -35,18 +35,23 @@ More specifically, the application will have 3 databases:
 
 ### Design
 
-#### Kanban Board
+#### Project Tracking
+
+In order to deliver a project following the Agile Methodology, I used a Kanban Board to monitor and track the evolution of my project. 
+
+As part of the visualisation process, I created a backlog of tasks to do, that I grouped into different categories called "Epics". Examples of epics are "Front-End", "Architecture", "GCP and CircleCi" and "presentation". These tags were used to get an instant overview of which part of the project the task to be carried out related to.
+
+For time management purposes, I created a new "Sprint" every one-two days, in which I could store all the tasks I wanted to complete during this timeframe, in order to keep track of my process.
 
 ![Kanban](Kanban.png)
 
 #### Entity Relationship Diagram
 
+The database for this application was designed using an entity relationship diagram, shown below. 
+
 ![ERDs](https://user-images.githubusercontent.com/52075688/92330675-92e57e00-f068-11ea-9128-597a5071fd18.png)
 
-ERDs.drawio
-Evolution of the diagrams:
-full many to many with 3 entities
-one to many with 2 entities
+As is shown in the diagrams, my original plan was to create three entities Days, Meals and Foods, where Days and Meals would have a Many to Many relationship and Meals and Foods would also have a Many to Many relationship. Unfortunately, the development of this idea would've required more time and expertise which is why I decided at this stage to keep only two entities, Meals and Foods, having a One to Many relationship. 
 
 ### Creation
 
