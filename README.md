@@ -36,6 +36,9 @@ More specifically, the application will have 3 databases:
 ### Design
 
 #### Kanban Board
+
+![Kanban](Kanban.png)
+
 #### Entity Relationship Diagram
 
 ![ERDs](https://user-images.githubusercontent.com/52075688/92330675-92e57e00-f068-11ea-9128-597a5071fd18.png)
