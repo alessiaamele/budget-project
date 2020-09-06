@@ -43,9 +43,6 @@ public class FoodsController {
                 : ResponseEntity.noContent().build();
     }
 
-
-
-
     @GetMapping("/getFoodById/{id}")
     public ResponseEntity<FoodsDTO> getNoteById(@PathVariable Long id){
         return ResponseEntity.ok(this.foodsService.findFoodById(id));
