@@ -24,20 +24,8 @@ public class Meals {
     @OneToMany(mappedBy = "meal", fetch = FetchType.EAGER)
     private List<Foods> food = new ArrayList<>();
 
-    @ManyToOne(targetEntity = Days.class)
-    private Days day;
-
-
     public Meals(){
 
-    }
-
-    public Days getDay() {
-        return day;
-    }
-
-    public void setDay(Days day) {
-        this.day = day;
     }
 
     public Meals(String name, String description) {

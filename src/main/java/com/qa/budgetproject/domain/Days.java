@@ -18,10 +18,6 @@ public class Days {
     @Column
     private String day_of_week;
 
-    @OneToMany(mappedBy = "day", fetch = FetchType.EAGER)
-    private List<Meals> meal = new ArrayList<>();
-
-
     public Days(){
 
     }
@@ -44,14 +40,6 @@ public class Days {
 
     public void setDay_of_week(String day_of_week) {
         this.day_of_week = day_of_week;
-    }
-
-    public List<Meals> getMeal() {
-        return meal;
-    }
-
-    public void setMeal(List<Meals> meal) {
-        this.meal = meal;
     }
 
 }
