@@ -38,6 +38,8 @@ More specifically, the application will have 3 databases:
 #### Kanban Board
 #### Entity Relationship Diagram
 
+![ERDs](https://user-images.githubusercontent.com/52075688/92330675-92e57e00-f068-11ea-9128-597a5071fd18.png)
+
 ERDs.drawio
 Evolution of the diagrams:
 full many to many with 3 entities
