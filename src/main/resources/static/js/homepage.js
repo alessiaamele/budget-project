@@ -112,7 +112,7 @@ function updateMeal(){
     req.onload = () => {
         if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
-        } else {
+        } else {tel
             console.log("Oops...");
         }
     };
