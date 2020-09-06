@@ -156,8 +156,8 @@ function updateFood(){
 }
 
 
-function deleteFood(){
-    let elements = document.getElementById("deleteIngredientForm").elements;
+function deleteMeal(){
+    let elements = document.getElementById("deleteMealForm").elements;
     // create a collection in json format and iterate over it to populate it
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
@@ -166,7 +166,7 @@ function deleteFood(){
     }
 
     const req = new XMLHttpRequest();
-    const URL = "http://localhost:8080/deleteFood/"+obj.foodId
+    const URL = "http://localhost:8080/deleteFood/"+obj.Number(mealId)
 
     req.open("DELETE", URL);
     req.onload = () => {
@@ -176,11 +176,4 @@ function deleteFood(){
             console.log("Oops...");
         }
     };
-    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(JSON.stringify({ name: obj.name,
-            cost: obj.cost,
-            meal:{
-                id: Number(obj.mealId)}
-        }
-    ));
 }
