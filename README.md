@@ -1,6 +1,6 @@
-# My Application 
+# Fundamental Project
 
-### Resources
+### Meals Planning and Budgeting
 
 ## Content
 
@@ -33,7 +33,25 @@ More specifically, the application will have 3 databases:
 * Some meals will require half a unit of an ingredient (eg: half a can of tomato sauce) -> brainstorm ideas to monitor this and include it in the costs, such as for example an additional feature of the meals would be tracking the leftovers? or a tag that shows recipes we can make using the leftovers?
 * Also think about the number of people that are going to eat (for the cost of ingredients) - 1 person/ 2 people/ a household
 
-### My approach
+### Design
+
+#### Kanban Board
+#### Entity Relationship Diagram
+
+Evolution of the diagrams:
+full many to many with 3 entities
+one to many with 2 entities
+
+### Creation
+
+#### Architecture
+#### Back-end
+#### Front-end
+#### Database structrure
+#### Systems Integration and Build
+#### Cloud Server
+
+
 
 ## Architecture
 
