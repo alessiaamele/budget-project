@@ -2,27 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Input Meal</title>
+    <title>Input Ingredients</title>
     <script src="../js/homepage.js"></script>
-
 </head>
 <body>
-
 <a href="MealsMenu.html">Go to Meals Menu</a><br><br>
 
-
 <h1> Your Meal: </h1>
-
-<form id="CreateMealForm">
-
+<form id="updateMealForm">
     <label for="name">Name of meal:</label><br>
     <input type="text" id="name" name="name"><br><br><br>
-
-    <label for="description">description:</label><br>
+    <label for="description">Description:</label><br>
     <input type="text" id="description" name="description"><br><br><br>
-
-    <input type="submit" onclick="createMeal()" value="Submit">
-
+    <label for="mealId">Id:</label><br>
+    <input type="text" id="mealId" name="mealId"><br><br><br>
+    <input type="submit" onclick="updateMeal()" value="Submit">
 </form>
 </body>
-</html>

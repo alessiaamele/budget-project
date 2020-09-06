@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Input Ingredients</title>
+    <title>Delete Ingredients</title>
     <script src="../js/homepage.js"></script>
+
 </head>
 <body>
 <a href="MealsMenu.html">Go to Meals Menu</a><br><br>
 
 <h1> Your ingredient: </h1>
-<form id="updateFoodForm">
-    <label for="name">Name of food:</label><br>
-    <input type="text" id="name" name="name"><br><br><br>
-    <label for="cost">Cost:</label><br>
-    <input type="text" id="cost" name="cost"><br><br><br>
+
+<form id="deleteIngredientForm">
+
     <label for="foodId">Id of ingredient:</label><br>
     <input type="text" id="foodId" name="foodId"><br><br><br>
-    <input type="submit" onclick="updateFood()" value="Submit">
+
+    <input type="submit" onclick="deleteFood()" value="Submit">
+
 </form>
 </body>
+</html>

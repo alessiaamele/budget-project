@@ -1,4 +1,4 @@
-function displayFoods(){
+function displayMeals(){
     const req = new XMLHttpRequest();
     req.onreadystatechange = () => {
         // Example handle logic
@@ -6,9 +6,9 @@ function displayFoods(){
             if (req.getResponseHeader("Content-Type") === "application/json") {
                 console.log("oh look its some JSON: " + req.responseText);
                 //adding an element to the body example
-                let elem = document.createElement('div');
-                elem.textContent = "hello world";
-                document.body.appendChild(elem);
+                //let elem = document.createElement('div');
+                //elem.textContent = "hello world";
+                //document.body.appendChild(elem);
 
                 let stuff = JSON.parse(req.response);
                 stuff.forEach(el => {
@@ -73,8 +73,8 @@ function submitFood(){
     ));
 }
 
-function updateFood(){
-    let elements = document.getElementById("updateForm").elements;
+function createMeal(){
+    let elements = document.getElementById("CreateMealForm").elements;
     // create a collection in json format and iterate over it to populate it
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
@@ -82,7 +82,36 @@ function updateFood(){
         obj[item.name] = item.value;
     }
 
-    const URL = "http://localhost:8080/updateFood/"+obj.mealId
+    const req = new XMLHttpRequest();
+    req.open("POST", "http://localhost:8080/createMeal");
+    req.onload = () => {
+        if (req.status === 200 && req.readyState == 4) {
+            console.log("Server Responded with: " + req.responseText);
+        } else {
+            console.log("Oops...");
+        }
+    };
+    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    req.send(JSON.stringify({ name: obj.name,
+            description: obj.description,
+        }
+    ));
+}
+
+
+
+
+
+
+function updateMeal(){
+    let elements = document.getElementById("updateMealForm").elements;
+    // create a collection in json format and iterate over it to populate it
+    let obj ={};
+    for(let i = 0 ; i < elements.length - 1 ; i++){
+        let item = elements.item(i);
+        obj[item.name] = item.value;
+    }
+    const URL = "http://localhost:8080/updateMeal/"+obj.mealId
     const req = new XMLHttpRequest();
     req.open("PUT", URL);
     req.onload = () => {
@@ -93,10 +122,59 @@ function updateFood(){
         }
     };
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(JSON.stringify({ name: obj.name,
-            cost: obj.cost,
-            meal:{
-                id: Number(obj.mealId)}
+    req.send(JSON.stringify({
+            name: obj.name,
+            description: obj.description
         }
     ));
+}
+
+function updateFood(){
+    let elements = document.getElementById("updateFoodForm").elements;
+    // create a collection in json format and iterate over it to populate it
+    let obj ={};
+    for(let i = 0 ; i < elements.length - 1 ; i++){
+        let item = elements.item(i);
+        obj[item.name] = item.value;
+    }
+    const URL = "http://localhost:8080/updateFood/"+obj.foodId
+    const req = new XMLHttpRequest();
+    req.open("PUT", URL);
+    req.onload = () => {
+        if (req.status === 200 && req.readyState == 4) {
+            console.log("Server Responded with: " + req.responseText);
+        } else {
+            console.log("Oops...");
+        }
+    };
+    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    req.send(JSON.stringify({
+            name: obj.name,
+        cost: Number(obj.cost)
+        }
+    ));
+}
+
+
+function deleteMeal(){
+    let elements = document.getElementById("deleteMealForm").elements;
+    // create a collection in json format and iterate over it to populate it
+    let obj ={};
+    for(let i = 0 ; i < elements.length - 1 ; i++){
+        let item = elements.item(i);
+        obj[item.name] = item.value;
+    }
+
+    const req = new XMLHttpRequest();
+    const URL = "http://localhost:8080/deleteMeal/"+obj.mealId
+
+    req.open("DELETE", URL);
+    req.onload = () => {
+        if (req.status === 200 && req.readyState == 4) {
+            console.log("Server Responded with: " + req.responseText);
+        } else {
+            console.log("Oops...");
+        }
+    };
+    req.send();
 }

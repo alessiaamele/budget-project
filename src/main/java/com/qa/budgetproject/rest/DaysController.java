@@ -33,14 +33,18 @@ public class DaysController {
     }
 
     @DeleteMapping("/deleteDay/{id}")
-    public Boolean deleteDay(@PathVariable Long id){
-        return this.daysService.deleteDayById(id);
+    public ResponseEntity<?> deleteDay(@PathVariable Long id) {
+        return this.daysService.deleteDayById(id)
+                ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
+                : ResponseEntity.noContent().build();
     }
+
 
     @GetMapping("/getDayById/{id}")
     public ResponseEntity<DaysDTO> getDayById(@PathVariable Long id){
         return ResponseEntity.ok(this.daysService.findDayById(id));
     }
+
 
     @PutMapping("/updateDay/{id}")
     public ResponseEntity<DaysDTO> updateDay(@PathVariable Long id, @RequestBody Days day){
