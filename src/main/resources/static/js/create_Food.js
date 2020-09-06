@@ -8,7 +8,7 @@ function submitFood(){
     }
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://34.89.87.120:8080/createFood");
+    req.open("POST", "http://34.89.87.120:9000/createFood");
     req.onload = () => {
         if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
