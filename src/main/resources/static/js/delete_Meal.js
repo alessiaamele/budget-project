@@ -1,4 +1,4 @@
-function deleteMeal(){
+function delete_Meal(){
     let elements = document.getElementById("deleteMealForm").elements;
     let del_meal ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
