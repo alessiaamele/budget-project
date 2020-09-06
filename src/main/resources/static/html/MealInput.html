@@ -14,7 +14,7 @@
 
 <h1> Your Meal: </h1>
 
-<form id="ingredientForm">
+<form id="CreateMealForm">
 
     <label for="name">Name of meal:</label><br>
     <input type="text" id="name" name="name"><br><br><br>
@@ -22,10 +22,7 @@
     <label for="description">description:</label><br>
     <input type="text" id="description" name="description"><br><br><br>
 
-    <label for="dayId">Id of day the meal belongs to:</label><br>
-    <input type="text" id="dayId" name="dayId"><br><br><br>
-
-    <input type="submit" onclick="submitFood()" value="Submit">
+    <input type="submit" onclick="createMeal()" value="Submit">
 
 </form>
 </body>
