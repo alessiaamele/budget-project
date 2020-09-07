@@ -1,15 +1,13 @@
 # Fundamental Project
 
-### Meals Planning and Budgeting
+## Meals Planning and Budgeting
 
-## Content
-
-## Brief
+### Brief
 The goal of this project was to create a CRUD web application; in which the user can Create, Read, Update and Delete objects. Moreover, the app needed to have a front-end connected to a database.
 
 This application is a planning and budgeting tool that enables the user to keep track of what he/she is eating. The system is capable of storing information regarding the ingredients of a meal and their associated costs in each meal that the user inputs.
 
-## Requirements
+### Requirements
 The application needs to utilise the technologies discussed during the training modules.
 The tech stack required is the following:
 
@@ -72,7 +70,7 @@ https://docs.google.com/spreadsheets/d/1zkykyqTN-Uv7JhmqB4F09KsH9naswYkpAZM02Vkr
 
 #### Current bugs
 
-Delete feature
+- As part of the CRUD functionality, the Delete feature does not seem to work at the moment.
 
 #### Future improvements
 Google docs file linked to this with different potential risks, impacts and predicted level of occurrence
