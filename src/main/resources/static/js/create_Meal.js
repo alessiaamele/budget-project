@@ -6,8 +6,9 @@ function createMeal(){
         let item = elements.item(i);
         obj[item.name] = item.value;
     }
-    req.open("POST", "http://localhost:8080/createMeal");
+
     const req = new XMLHttpRequest();
+    req.open("POST", "http://localhost:8080/createMeal");
 
     req.onload = () => {
         if (req.status === 200 && req.readyState === 4) {
