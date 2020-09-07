@@ -72,9 +72,10 @@ The database for this application was designed using Entity Relationship Diagram
 
 ### Stage View
 
-## Project Tracking
-
 ### Risk Assessement
+
+Link to the complete risk assessment:
+https://docs.google.com/spreadsheets/d/1zkykyqTN-Uv7JhmqB4F09KsH9naswYkpAZM02Vkr6a4/edit?usp=sharing
 
 ### Future improvements
 Google docs file linked to this with different potential risks, impacts and predicted level of occurrence
