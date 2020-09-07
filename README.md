@@ -50,7 +50,7 @@ The most common example of multi-tier architecture is the three-tier architectur
 The front-end components of this application was created using HTML (HyperText Markup Language) as well as JavaScript.
 
 ##### Back-end: Java
-The back-end of the application refers to the processing of data before the moving either to or from the database. This application follows a 
+The back-end of the application refers to the processing of data before the moving either to or from the database. 
 
 ##### Database: GCP Managed SQL Server
 A hosting system for this application was necessary to its creation. The Google Cloud Services server with the Ubuntu 18.04 Linux operating system was chosen for this purpose. H2 is a relational database management system written in Java. 
