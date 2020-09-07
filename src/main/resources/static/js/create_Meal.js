@@ -7,6 +7,7 @@ function createMeal(){
         obj[item.name] = item.value;
     }
 
+
     const req = new XMLHttpRequest();
     req.open("POST", "http://localhost:8080/createMeal");
 
