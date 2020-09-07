@@ -18,6 +18,7 @@ function displayMeals(){
                     // adding title to the body of the page
                     let elem = document.createElement('div');
                     let header = document.createElement('h1');
+                    let totalCost =0;
                     header.textContent = "Meal name: " + el.name;
                     elem.appendChild(header);
                     el.foods.forEach(food => {
@@ -28,6 +29,8 @@ function displayMeals(){
                         cost.textContent = "Cost (£): " + food.cost;
                         elem.appendChild(name);
                         elem.appendChild(cost);
+                        totalCost = totalCost + food.cost;
+                        elem.appendChild(totalCost);
                     })
                     //always do this otherwise it won't be added
                     document.body.appendChild(elem);
