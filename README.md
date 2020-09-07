@@ -11,13 +11,13 @@ This application is a planning and budgeting tool that enables the user to keep 
 The application needs to utilise the technologies discussed during the training modules.
 The tech stack required is the following:
 
-Kanban Board: Jira
-Database: GCP Managed SQL Server
-Programming language: Java 
-Front-end: HTML, CSS and JavaScript
-Version Control: Git
-CI Server: CircleCI
-Cloud server: GCP virtual machine
+* Kanban Board: Jira
+* Database: GCP Managed SQL Server
+* Programming language: Java 
+* Front-end: HTML, CSS and JavaScript
+* Version Control: Git
+* CI Server: CircleCI
+* Cloud server: GCP virtual machine
 
 ### Design
 
