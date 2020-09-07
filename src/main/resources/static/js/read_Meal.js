@@ -42,6 +42,6 @@ function displayMeals(){
             console.log("Oh no... handle error");
         }
     };
-    req.open("GET", "http://35.246.52.182:8080/getAllMeals");
+    req.open("GET", "http://localhost:8080/getAllMeals");
     req.send();
 }
