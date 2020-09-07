@@ -9,7 +9,7 @@ function createMeal(){
 
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createMeal");
+    req.open("POST", "http://34.89.87.120:8080/createMeal");
 
     req.onload = () => {
         if (req.status === 200 && req.readyState === 4) {

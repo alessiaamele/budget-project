@@ -8,7 +8,7 @@ function submitFood(){
     }
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createFood");
+    req.open("POST", "http://34.89.87.120:8080/createFood");
 
 
     req.onload = () => {

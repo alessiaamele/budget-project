@@ -7,7 +7,7 @@ function updateFood(){
         let item = elements.item(i);
         obj[item.name] = item.value;
     }
-    const URL = "http://localhost:8080/updateFood/"+obj.foodId
+    const URL = "http://34.89.87.120:8080/updateFood/"+obj.foodId
     const req = new XMLHttpRequest();
     req.open("PUT", URL);
     req.onload = () => {
