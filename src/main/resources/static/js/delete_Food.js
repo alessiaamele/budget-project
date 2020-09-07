@@ -6,7 +6,7 @@ function delete_Food(){
         del_food[item.name] = item.value;
     }
 
-    const URL = "http://localshost:8080/deleteFood/" + del_food.id;
+    const URL = "http://localhost:8080/deleteFood/" + del_food.id;
     const req = new XMLHttpRequest();
 
     req.open("DELETE", URL);
