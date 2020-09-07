@@ -20,18 +20,15 @@ function displayMeals(){
                     let header = document.createElement('h1');
                     header.textContent = "Meal name: " + el.name;
                     elem.appendChild(header);
-                    let total_cost = 0;
                     el.foods.forEach(food => {
                         console.log(food) // print all notes for each notebook
                         let name = document.createElement('p');
                         let cost = document.createElement('p');
                         name.textContent = "Ingredient: " + food.name;
                         cost.textContent = "Cost (£): " + food.cost;
-                        total_cost = total_cost + food.cost;
                         elem.appendChild(name);
                         elem.appendChild(cost);
                     })
-                    elem.appendChild(total_cost);
                     //always do this otherwise it won't be added
                     document.body.appendChild(elem);
 
@@ -45,6 +42,6 @@ function displayMeals(){
             console.log("Oh no... handle error");
         }
     };
-    req.open("GET", "http://35.189.126.182:8080/getAllMeals");
+    req.open("GET", "http://localshost:8080/getAllMeals");
     req.send();
 }
