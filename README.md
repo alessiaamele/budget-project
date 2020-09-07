@@ -7,7 +7,19 @@
 ## Brief
 The goal of this project was to create a CRUD web application; in which the user can Create, Read, Update and Delete objects. Moreover, the app needed to have a front-end connected to a database.
 
-This application is a planning and budgeting tool that enables the user to keep track of what he/she is eating. The system is capable of storing information regarding the ingredient and the cost in each meal that the user inputs.
+This application is a planning and budgeting tool that enables the user to keep track of what he/she is eating. The system is capable of storing information regarding the ingredients of a meal and their associated costs in each meal that the user inputs.
+
+## Requirements
+The application needs to utilise the technologies discussed during the training modules.
+The tech stack required is the following:
+
+Kanban Board: Jira
+Database: GCP Managed SQL Server
+Programming language: Java 
+Front-end: HTML, CSS and JavaScript
+Version Control: Git
+CI Server: CircleCI
+Cloud server: GCP virtual machine
 
 ### Design
 
@@ -29,25 +41,27 @@ The database for this application was designed using Entity Relationship Diagram
 
 ### Creation
 
-#### Cloud Server
-A hosting system for this application was necessary to its creation. The Google Cloud Services server with the Ubuntu 18.04 Linux operating system was chosen for this purpose.
+#### The Multi-Tiered Architecture
+The most common example of multi-tier architecture is the three-tier architecture, which consists of:
 
-#### Architecture
-#### Back-end
-#### Front-end
-#### Database structrure
-#### CI Pipeline
+1. Presentation Layer - The 'front-end', the part of the application seen by the user.
+2. Business Layer - The 'back-end', this part of the application deals with applying business rules to any data received from or sent to the user.
+3. Persistence/Data Layer - The 'database', persists data in order for the app to function.
 
+##### Front-end: HTML and JavaScript
+The front-end components of this application was created using HTML (HyperText Markup Language) as well as JavaScript.
 
+##### Back-end: Java
+The back-end of the application refers to the processing of data before the moving either to or from the database. This application follows a 
 
+##### Database: GCP Managed SQL Server
+A hosting system for this application was necessary to its creation. The Google Cloud Services server with the Ubuntu 18.04 Linux operating system was chosen for this purpose. H2 is a relational database management system written in Java. 
 
-## Architecture
+#### Version Control: GitHub
+Github enables you to keep track of a repository that is used as a central source code management system, using a branching workflow model. The code become easily accessible as it is very easy to clone. 
 
-### Database structure
-
-### CI Pipeline
-
-### Stage View
+#### Continuous Integration: Circle Ci
+CircleCI is a continuous integration and delivery platform that is designed to automatically test and deploy source code as it is pushed into a code repository. CircleCI is a particularly user-friendly tool for CI/CD, allowing the user to get your automated tests up and running with minimal setup time required.
 
 ### Risk Assessement
 
